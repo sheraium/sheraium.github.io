@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"sheraium.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="YongXiu&#39;s blogs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://sheraium.github.io/categories/index.html">
+  <meta name="description" content="Docker Desktop for Windows SettingsDocker Engine daemon configuration file 在 insecure-registries ，加入 private registry IP 123456&amp;#123;  &quot;registry-mirrors&quot;: [],  &quot;insecure-registries&quot;: [&quot;172.16.220.101:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Push image 到 private registry">
+<meta property="og:url" content="https://sheraium.github.io/2020/04/18/docker-push-private-registry/index.html">
 <meta property="og:site_name" content="YongXiu&#39;s blogs">
-<meta property="og:description" content="YongXiu&#39;s blogs">
+<meta property="og:description" content="Docker Desktop for Windows SettingsDocker Engine daemon configuration file 在 insecure-registries ，加入 private registry IP 123456&amp;#123;  &quot;registry-mirrors&quot;: [],  &quot;insecure-registries&quot;: [&quot;172.16.220.101:">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-04-15T14:57:36.000Z">
-<meta property="article:modified_time" content="2020-04-15T14:57:46.894Z">
+<meta property="article:published_time" content="2020-04-18T11:33:53.000Z">
+<meta property="article:modified_time" content="2020-04-18T11:43:08.537Z">
 <meta property="article:author" content="YongXiu">
+<meta property="article:tag" content="Docker Desktop for Windows">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sheraium.github.io/categories/">
+<link rel="canonical" href="https://sheraium.github.io/2020/04/18/docker-push-private-registry/">
 
 
 <script id="page-configurations">
@@ -40,13 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>categories | YongXiu's blogs
-</title>
+  <title>Push image 到 private registry | YongXiu's blogs</title>
   
 
 
@@ -159,51 +159,98 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-TW">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://sheraium.github.io/2020/04/18/docker-push-private-registry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YongXiu">
+      <meta itemprop="description" content="YongXiu's blogs">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YongXiu's blogs">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Push image 到 private registry
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
 
-<div class="post-meta">
+              <time title="創建時間：2020-04-18 19:33:53 / 修改時間：19:43:08" itemprop="dateCreated datePublished" datetime="2020-04-18T19:33:53+08:00">2020-04-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Docker-Desktop-for-Windows-Settings"><a href="#Docker-Desktop-for-Windows-Settings" class="headerlink" title="Docker Desktop for Windows Settings"></a>Docker Desktop for Windows Settings</h3><p>Docker Engine daemon configuration file 在 insecure-registries ，加入 private registry IP</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [],</span><br><span class="line">  <span class="attr">"insecure-registries"</span>: [<span class="string">"172.16.220.101:8625"</span>],</span><br><span class="line">  <span class="attr">"debug"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"experimental"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Login-private-registry"><a href="#Login-private-registry" class="headerlink" title="Login private registry"></a>Login private registry</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login -u peter -p 0312 172.16.220.101:8625&#x2F;dockerhub</span><br></pre></td></tr></table></figure>
+
+<h3 id="tag-image"><a href="#tag-image" class="headerlink" title="tag image"></a>tag image</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag hello-world 172.16.220.101:8625&#x2F;dockerhub&#x2F;hello-world</span><br></pre></td></tr></table></figure>
+
+<h3 id="push-image"><a href="#push-image" class="headerlink" title="push image"></a>push image</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push 172.16.220.101:8625&#x2F;dockerhub&#x2F;hello-world</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Docker-Desktop-for-Windows/" rel="tag"># Docker Desktop for Windows</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/15/Markdown/" rel="prev" title="Markdown">
+      <i class="fa fa-chevron-left"></i> Markdown
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共有 2 個分類
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -254,6 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-Desktop-for-Windows-Settings"><span class="nav-number">1.</span> <span class="nav-text">Docker Desktop for Windows Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Login-private-registry"><span class="nav-number">2.</span> <span class="nav-text">Login private registry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag-image"><span class="nav-number">3.</span> <span class="nav-text">tag image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-image"><span class="nav-number">4.</span> <span class="nav-text">push image</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
